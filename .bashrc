@@ -12,15 +12,22 @@ alias sbrc='source ~/.bashrc'
 alias s='source'
 alias vimbrc='vim ~/.bashrc'
 alias catbrc='cat ~/.bashrc'
-alias gopro='cd go/src/'
 alias lessgiconf='less .git/config'
 alias lssh='ls -a ~/.ssh/'
 
+# Project
+alias cdbengal='cd go/src/bengal-api'
+
 # Git
 alias gi='git'
+alias giini='git init'
+alias giclo='git clone'
 alias gic='git commit -m'
 alias giadc='git add . && git commit -m'
 alias gib='git branch -a'
+# git branch -m "newname" - カレントブランチのブランチ名を修正する
+# git branch -m "old" "new" - ブランチのブランチ名を修正する
+alias gibm='git branch -m'
 alias gis='git status'
 alias gisb='git branch -a && git status'
 alias gilog='git log'
@@ -38,6 +45,14 @@ alias giseturl='git remote set-url origin'
 alias giconf='git config'
 alias giconf-gl='git config --global'
 alias giconf-lo='git config --local'
-# git reset --hard ^HEAD 1つ前のコミットまで戻る
-# git reset --hard ハッシュ値 指定したハッシュ値のコミットまで戻る
+# ^HEAD - 1つ前のコミットまで戻る
+# ハッシュ値 - 指定したハッシュ値のコミットまで戻る
 alias gireset='git reset --hard'
+# コミットメッセージを修正
+alias giame='git commit --amend -m'
+# コミット後の更新されていない内容を退避
+alias gista='git stash'
+# 退避リストが見れる
+alias gistals='git stash list'
+# 退避を戻す
+alias gipop='git stash pop'

@@ -38,4 +38,6 @@ alias giseturl='git remote set-url origin'
 alias giconf='git config'
 alias giconf-gl='git config --global'
 alias giconf-lo='git config --local'
+# git reset --hard ^HEAD 1つ前のコミットまで戻る
+# git reset --hard ハッシュ値 指定したハッシュ値のコミットまで戻る
 alias gireset='git reset --hard'

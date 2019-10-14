@@ -1,5 +1,8 @@
 # Unix
 
+# search
+alias search='mdfind -onlyin ~/ -name'
+
 ## code
 alias codealias='code ~/dotfiles/.bashrc'
 

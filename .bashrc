@@ -1,6 +1,5 @@
-
-# alias
 # Unix
+alias aliashelp='code ~/dotfiles/.bashrc'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -l -a'
@@ -20,6 +19,7 @@ alias lssh='ls -a ~/.ssh/'
 # Git
 alias gi='git'
 alias gic='git commit -m'
+alias giadc='git add . && git commit -m'
 alias gib='git branch -a'
 alias gis='git status'
 alias gisb='git branch -a && git status'
@@ -38,3 +38,4 @@ alias giseturl='git remote set-url origin'
 alias giconf='git config'
 alias giconf-gl='git config --global'
 alias giconf-lo='git config --local'
+alias gireset='git reset --hard'

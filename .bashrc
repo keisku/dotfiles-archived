@@ -1,8 +1,18 @@
 # Unix
-alias aliashelp='code ~/dotfiles/.bashrc'
+
+## code
+alias codealias='code ~/dotfiles/.bashrc'
+
+## ls
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -l -a'
+alias lssh='ls -a ~/.ssh/'
+
+## rm
+alias rm='rm -i'
+
+## bash
 alias vimbpro='vim ~/.bash_profile'
 alias catbpro='cat ~/.bash_profile'
 alias bpro='~/.bash_profile'
@@ -12,11 +22,13 @@ alias sbrc='source ~/.bashrc'
 alias s='source'
 alias vimbrc='vim ~/.bashrc'
 alias catbrc='cat ~/.bashrc'
-alias lessgiconf='less .git/config'
-alias lssh='ls -a ~/.ssh/'
 
-# Project
+## less
+alias moregiconf='more .git/config'
+
+# cd
 alias cdbengal='cd go/src/bengal-api'
+alias ..='cd ..'
 
 # Git
 alias gi='git'

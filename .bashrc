@@ -33,48 +33,56 @@ alias moregiconf='more .git/config'
 alias cdbengal='cd go/src/bengal-api'
 alias ..='cd ..'
 
-# Git
+# git
 alias gi='git'
 alias giini='git init'
 alias giclo='git clone'
+# git add
+alias giadd='git add'
+alias giad='git add .'
+# git commit
 alias gic='git commit -m'
 alias giadc='git add . && git commit -m'
-# ブランチにメモを残せる
-alias gibmemo='git branch --edit-description'
+alias giame='git commit --amend -m' # コミットメッセージを修正
+#git push
+alias gipsh='git push origin HEAD'
+alias giph-f='git push -f origin HEAD'
+# git rebase
+alias gipl-re='git pull --rebase origin master'
+alias gireconti='git rebase --continue'
+#git checkout
+alias gich='git checkout'
+alias gich-b='git checkout -b'
+# git branch / git status
 alias gib='echo ===================== Memo ===================== && git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description && git branch -a'
+alias gibmemo='git branch --edit-description' # ブランチにメモを残せる
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
 alias gibm='git branch -m'
+alias gib-d='git branch -D'
 alias gis='git status'
 alias gisb='echo ===================== Memo ===================== && git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description && git branch -a && git status'
+# git log
 alias gilog='git log'
 alias gil='git log --oneline'
-alias gipsh='git push origin HEAD'
-alias gipl-re='git pull --rebase'
-alias giadd='git add'
-alias giad='git add .'
-alias gich='git checkout'
-alias gich-b='git checkout -b'
-alias gib-d='git branch -D'
-# HEAD~ - 1つ前のコミットと比べる
-# HEAD~~ - 2つ前のコミットと比べる
-alias gidiff='git diff --histogram'
+# git diff
+alias gidiff='git diff --histogram' # HEAD~ - 1つ前のコミットと比べる
+# git remote
 alias giremote='git remote -v'
 alias giseturl='git remote set-url origin'
+# git config
 alias giconf='git config'
 alias giconf-gl='git config --global'
 alias giconf-lo='git config --local'
+# git reset
 # ^HEAD - 1つ前のコミットまで戻る
 # ハッシュ値 - 指定したハッシュ値のコミットまで戻る
 alias gireset-h='git reset --hard'
 # ハッシュ値 - 指定したハッシュ値のコミットまで戻る
 alias gireset-s='git reset --soft'
 alias gireset='git reset'
-# コミットメッセージを修正
-alias giame='git commit --amend -m'
-# コミット後の更新されていない内容を退避
+# git stash
 alias gista='git stash'
-# 退避リストが見れる
-alias gistals='git stash list'
-# 退避を戻す
-alias gipop='git stash pop'
+alias gistals='git stash list' # 退避リストが見れる
+alias gipop='git stash pop' # 退避を戻す
+alias gistaap='git stash apply' # 退避を戻す

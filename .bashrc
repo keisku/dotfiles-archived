@@ -39,12 +39,14 @@ alias giini='git init'
 alias giclo='git clone'
 alias gic='git commit -m'
 alias giadc='git add . && git commit -m'
-alias gib='git branch -a'
+# ブランチにメモを残せる
+alias gibmemo='git branch --edit-description'
+alias gib='echo ===================== Memo ===================== && git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description && git branch -a'
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
 alias gibm='git branch -m'
 alias gis='git status'
-alias gisb='git branch -a && git status'
+alias gisb='echo ===================== Memo ===================== && git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description && git branch -a && git status'
 alias gilog='git log'
 alias gil='git log --oneline'
 alias gipsh='git push origin HEAD'
@@ -64,7 +66,10 @@ alias giconf-gl='git config --global'
 alias giconf-lo='git config --local'
 # ^HEAD - 1つ前のコミットまで戻る
 # ハッシュ値 - 指定したハッシュ値のコミットまで戻る
-alias gireset='git reset --hard'
+alias gireset-h='git reset --hard'
+# ハッシュ値 - 指定したハッシュ値のコミットまで戻る
+alias gireset-s='git reset --soft'
+alias gireset='git reset'
 # コミットメッセージを修正
 alias giame='git commit --amend -m'
 # コミット後の更新されていない内容を退避

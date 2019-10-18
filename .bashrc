@@ -54,14 +54,20 @@ alias gireconti='git rebase --continue'
 alias gich='git checkout'
 alias gich-b='git checkout -b'
 # git branch / git status
-alias gib='echo ===================== Memo ===================== && git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description && git branch -a'
+alias gib='echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ && 
+            git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description &&
+            echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ &&
+            git branch -a'
 alias gibmemo='git branch --edit-description' # ブランチにメモを残せる
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
 alias gibm='git branch -m'
 alias gib-d='git branch -D'
 alias gis='git status'
-alias gisb='echo ===================== Memo ===================== && git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description && git branch -a && git status'
+alias gisb='echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ &&
+            git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description &&
+            echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ &&
+            git branch -a && git status'
 # git log
 alias gilog='git log'
 alias gil='git log --oneline'

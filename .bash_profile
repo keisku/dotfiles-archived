@@ -17,7 +17,7 @@ PROMPT_COMMAND='add_line'
 # 下記ソースをコピペした
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
-export PS1='\[\e[1;37;42m\] [\A] \w \[\e[0m\] \e[1;32m\] $(__git_ps1 "(%s) " )\[\e[0m\] \e[1;32m\]$ \[\e[0m\]'
+export PS1='\[\e[96;1m\][\A]\[\e[0m\] \w \e[96;1m\] $(__git_ps1 "<%s>" )\[\e[0m\] $ \[\e[0m\]'
 
 # GOPATH
 export GOENV_ROOT=$HOME/.goenv

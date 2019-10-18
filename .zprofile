@@ -2,7 +2,7 @@ autoload -U compinit
 compinit
 
 # コマンドプロンプト
-PROMPT='%F{cyan}%B[%T]%b %B%~%b%f %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%f '
+PROMPT='%F{cyan}%B[%T]%b%f %~ %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%f '
 
 # GOPATH
 export GOENV_ROOT=$HOME/.goenv

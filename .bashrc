@@ -98,3 +98,4 @@ alias gista='git stash'
 alias gistals='git stash list' # 退避リストが見れる
 alias gipop='git stash pop' # 退避を戻す
 alias gistaap='git stash apply' # 退避を戻す
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

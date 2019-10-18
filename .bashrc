@@ -1,7 +1,7 @@
 # Unix
 
 # search
-alias search='mdfind -onlyin ~/ -name'
+alias sch='mdfind -onlyin ~/ -name'
 
 ## code
 alias codealias='code ~/dotfiles/.bashrc'
@@ -30,7 +30,7 @@ alias catbrc='cat ~/.bashrc'
 alias moregiconf='more .git/config'
 
 # cd
-alias cdbengal='cd go/src/bengal-api'
+alias cdbengal='cd go/1.13.1/src/github.com/hrbrain/bengal-api'
 alias ..='cd ..'
 
 # git

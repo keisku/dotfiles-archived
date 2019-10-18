@@ -1,16 +1,18 @@
 # Unix
-
-# search
-alias sch='mdfind -onlyin ~/ -name'
-
 ## code
-alias codealias='code ~/dotfiles/.bashrc'
+alias dots='code ~/dotfiles'
 
 ## ls
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -l -a'
 alias lssh='ls -a ~/.ssh/'
+
+# zsh
+alias vizpro='vim ~/.zprofile'
+alias szpro='source ~/.zprofile'
+alias vizrc='vim ~/.zshrc'
+alias szrc='source ~/.zshrc'
 
 ## rm
 alias rm='rm -i'
@@ -54,20 +56,15 @@ alias gireconti='git rebase --continue'
 alias gich='git checkout'
 alias gich-b='git checkout -b'
 # git branch / git status
-alias gib='echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ && 
-            git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description &&
-            echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ &&
-            git branch -a'
+alias gib='git branch -a'
 alias gibmemo='git branch --edit-description' # ブランチにメモを残せる
+alias gibshow='git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description'
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
 alias gibm='git branch -m'
 alias gib-d='git branch -D'
 alias gis='git status'
-alias gisb='echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ &&
-            git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description &&
-            echo -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ &&
-            git branch -a && git status'
+alias gib='git branch -a && git status'
 # git log
 alias gilog='git log'
 alias gil='git log --oneline'
@@ -106,7 +103,6 @@ else
 PROMPT="%F{cyan}%n:%f%F{green}%d%f [%m] %%
 "
 fi
-
 
 # ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
@@ -147,4 +143,10 @@ setopt prompt_subst
 
 # プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
+export PATH="/usr/local/sbin:$PATH"
 
+# 'cd' なしで移動する
+setopt auto_cd
+setopt auto_pushd
+
+source ~/.zprofile

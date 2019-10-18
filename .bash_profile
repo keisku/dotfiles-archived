@@ -3,16 +3,6 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
-# 出力の後に改行を入れる
-function add_line {
-  if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
-    PS1_NEWLINE_LOGIN=true
-  else
-    printf '\n'
-  fi
-}
-PROMPT_COMMAND='add_line'
-
 # git ブランチを表示する
 # 下記ソースをコピペした
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh

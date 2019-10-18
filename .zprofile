@@ -2,12 +2,10 @@ autoload -U compinit
 compinit
 
 # コマンドプロンプト
-PROMPT='%F{cyan}%T%f %F{cyan}>%f%F{green}>%f%F{cyan}>%f '
+PROMPT='%F{cyan}%B[%T]%b %B%~%b%f %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%f '
 
 # GOPATH
 export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+export PATH=$HOME/.goenv/bin:$PATH
 eval "$(goenv init -)"
-
-export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$GOENV_ROOT/bin:$PATH
-

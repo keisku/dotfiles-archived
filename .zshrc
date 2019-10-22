@@ -109,12 +109,9 @@ alias giseturl='git remote set-url origin'
 alias giconf='git config'
 alias giconf-gl='git config --global'
 alias giconf-lo='git config --local'
-# git reset
-# ^HEAD - 1つ前のコミットまで戻る
-# ハッシュ値 - 指定したハッシュ値のコミットまで戻る
-alias gireset-h='git reset --hard'
-# ハッシュ値 - 指定したハッシュ値のコミットまで戻る
-alias gireset-s='git reset --soft'
+# マージしたけどやめたいとき
+alias giabort='git merge --abort' # マージしたらコンフリクトしたのでやめる
+alias gireset='git reset --hard HEAD' # コンフリクトを解消したけどやめる
 alias gireset='git reset'
 # git stash
 alias gista='git stash'

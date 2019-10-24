@@ -80,7 +80,8 @@ alias giadc='git add . && git commit -m'
 alias giame='git commit --amend -m' # コミットメッセージを修正
 #git push
 alias gipsh='git push origin HEAD'
-alias giph-f='git push -f origin HEAD'
+alias giph-f='git push --force-with-lease origin HEAD'
+alias gipsh-d='git push --delete origin' # ブランチ名の指定が必要
 # git rebase
 alias gipl-re='git pull --rebase origin master'
 alias gireconti='git rebase --continue'
@@ -173,6 +174,9 @@ setopt prompt_subst
 # プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
 export PATH="/usr/local/sbin:$PATH"
+
+# 前のコマンドと同じ場合履歴に残さない
+setopt HIST_IGNORE_DUPS
 
 # 'cd' なしで移動する
 setopt auto_cd

@@ -120,6 +120,9 @@ alias gistals='git stash list' # 退避リストが見れる
 alias gipop='git stash pop' # 退避を戻す
 alias gistap='git stash apply' # 退避を戻す
 
+### docker
+alias dkps='docker ps'
+
 # Gitbブランチを表示させる
 # https://qiita.com/nishina555/items/f4f1ddc6ed7b0b296825
 

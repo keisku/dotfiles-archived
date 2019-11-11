@@ -116,9 +116,11 @@ alias gireset='git reset --hard HEAD' # コンフリクトを解消したけど�
 alias gireset='git reset'
 # git stash
 alias gista='git stash'
-alias gistals='git stash list' # 退避リストが見れる
-alias gipop='git stash pop' # 退避を戻す
-alias gistap='git stash apply' # 退避を戻す
+alias gisls='git stash list' # 退避リストが見れる
+alias gispop='git stash pop' # 退避を戻す
+alias gisapp='git stash apply' # 退避を戻す
+alias gisdr='git stash drop' # stash@{N} を付け足すことでN番目のスタッシュを消せる
+alias gissv='git stash save' # "xxxxx" メッセージをつけてスタッシュ
 
 ### docker
 alias dkps='docker ps'

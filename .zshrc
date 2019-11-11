@@ -6,14 +6,17 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
+
 # fhc - copy history
 fhc(){
   echo $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g') | pbcopy
 }
+
 # fh - repeat history
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
 }
+
 # fch - checkout git branch (including remote branches)
 fch() {
   local branches branch
@@ -22,6 +25,7 @@ fch() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+
 # fshow - git commit browser
 fshow() {
   git log --graph --color=always \
@@ -72,59 +76,58 @@ alias cdbengal='cd go/1.13.1/src/github.com/hrbrain/bengal-api'
 alias ..='cd ..'
 
 ### git
-alias gi='git'
-alias giini='git init'
-alias giclo='git clone'
+alias g='git'
+alias gni='git init'
+alias gclo='git clone'
 # git add
-alias giadd='git add'
-alias giad='git add .'
+alias gadd='git add'
+alias gad='git add .'
 # git commit
-alias gic='git commit -m'
-alias giadc='git add . && git commit -m'
-alias giame='git commit --amend -m' # コミットメッセージを修正
+alias gc='git commit -m'
+alias gadc='git add . && git commit -m'
+alias game='git commit --amend -m' # コミットメッセージを修正
 #git push
-alias gipsh='git push origin HEAD'
-alias gipsh-f='git push --force-with-lease origin HEAD'
-alias gipsh-d='git push --delete origin' # ブランチ名の指定が必要
+alias gpsh='git push origin HEAD'
+alias gpsh-f='git push --force-with-lease origin HEAD'
+alias gpsh-d='git push --delete origin' # ブランチ名の指定が必要
 # git rebase
-alias gipl-re='git pull --rebase origin master'
-alias gireconti='git rebase --continue'
+alias grebase='git pull --rebase origin master'
+alias grebase-c='git rebase --continue'
 #git checkout
-alias gich='git checkout'
-alias gich-b='git checkout -b'
+alias gch='git checkout'
+alias gch-b='git checkout -b'
 # git branch / git status
-alias gib='git branch -a'
-alias gibmemo='git branch --edit-description' # ブランチにメモを残せる
-alias gibshow='git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description'
+alias gbmemo='git branch --edit-description' # ブランチにメモを残せる
+alias gbshow='git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description'
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
-alias gibm='git branch -m'
-alias gib-d='git branch -D'
-alias gis='git status'
-alias gib='git branch -a && git status'
+alias gbm='git branch -m'
+alias gb-d='git branch -D'
+alias gs='git status'
+alias gb='git branch -a && git status'
 # git log
-alias gilog='git log'
-alias gil='git log --oneline'
+alias glog='git log'
+alias gl='git log --oneline'
 # git diff
-alias gidiff='git diff --histogram' # HEAD~ - 1つ前のコミットと比べる
+alias gdiff='git diff --histogram' # HEAD~ - 1つ前のコミットと比べる
 # git remote
-alias giremote='git remote -v'
-alias giseturl='git remote set-url origin'
+alias gremote='git remote -v'
+alias gseturl='git remote set-url origin'
 # git config
-alias giconf='git config'
-alias giconf-gl='git config --global'
-alias giconf-lo='git config --local'
+alias gconf='git config'
+alias gconf-gl='git config --global'
+alias gconf-lo='git config --local'
 # マージしたけどやめたいとき
-alias giabort='git merge --abort' # マージしたらコンフリクトしたのでやめる
-alias gireset='git reset --hard HEAD' # コンフリクトを解消したけどやめる
-alias gireset='git reset'
+alias gabort='git merge --abort' # マージしたらコンフリクトしたのでやめる
+alias greset='git reset --hard HEAD' # コンフリクトを解消したけどやめる
+alias greset='git reset'
 # git stash
-alias gista='git stash'
-alias gisls='git stash list' # 退避リストが見れる
-alias gispop='git stash pop' # 退避を戻す
-alias gisapp='git stash apply' # 退避を戻す
-alias gisdr='git stash drop' # stash@{N} を付け足すことでN番目のスタッシュを消せる
-alias gissv='git stash save' # "xxxxx" メッセージをつけてスタッシュ
+alias gsta='git stash'
+alias gsls='git stash list' # 退避リストが見れる
+alias gspop='git stash pop' # 退避を戻す
+alias gsapp='git stash apply' # 退避を戻す
+alias gsdr='git stash drop' # stash@{N} を付け足すことでN番目のスタッシュを消せる
+alias gssv='git stash save' # "xxxxx" メッセージをつけてスタッシュ
 
 ### docker
 alias dkps='docker ps'

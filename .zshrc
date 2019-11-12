@@ -116,8 +116,8 @@ alias gremote='git remote -v'
 alias gseturl='git remote set-url origin'
 # git config
 alias gconf='git config'
-alias gconf-gl='git config --global'
-alias gconf-lo='git config --local'
+alias gglobal='git config --global --list'
+alias glocal='git config --local --list'
 # マージしたけどやめたいとき
 alias gabort='git merge --abort' # マージしたらコンフリクトしたのでやめる
 alias greset='git reset --hard HEAD' # コンフリクトを解消したけどやめる
@@ -129,6 +129,8 @@ alias gspop='git stash pop'
 alias gsapp='(){git stash apply stash@\{$1\}}'
 alias gsdr='(){git stash drop stash@\{$1\}}'
 alias gssv='git stash save' 
+# git clean
+alias gclean='git reset HEAD . && git clean -df .'
 
 ### docker
 alias dkps='docker ps'

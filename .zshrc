@@ -53,6 +53,7 @@ alias vizpro='vim ~/.zprofile'
 alias szpro='source ~/.zprofile'
 alias vizrc='vim ~/.zshrc'
 alias szrc='source ~/.zshrc'
+alias lesszrc='less ~/.zshrc'
 
 ## rm
 alias rm='rm -i'
@@ -77,7 +78,7 @@ alias ..='cd ..'
 
 ### git
 alias g='git'
-alias gni='git init'
+alias gini='git init'
 alias gclo='git clone'
 # git add
 alias gadd='git add'
@@ -123,11 +124,11 @@ alias greset='git reset --hard HEAD' # コンフリクトを解消したけど�
 alias greset='git reset'
 # git stash
 alias gsta='git stash'
-alias gsls='git stash list' # 退避リストが見れる
-alias gspop='git stash pop' # 退避を戻す
-alias gsapp='git stash apply' # 退避を戻す
-alias gsdr='git stash drop' # stash@{N} を付け足すことでN番目のスタッシュを消せる
-alias gssv='git stash save' # "xxxxx" メッセージをつけてスタッシュ
+alias gsls='git stash list'
+alias gspop='git stash pop'
+alias gsapp='(){git stash apply stash@\{$1\}}'
+alias gsdr='(){git stash drop stash@\{$1\}}'
+alias gssv='git stash save' 
 
 ### docker
 alias dkps='docker ps'

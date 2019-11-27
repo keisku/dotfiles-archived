@@ -55,3 +55,10 @@ set wrapscan
 set hlsearch
 "ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+"カラースキーマを設定
+colorscheme molokai
+syntax on
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
+

@@ -38,6 +38,19 @@ fshow() {
 FZF-EOF"
 }
 
+# git clone
+gclone() {
+  name=$MY_NAME_FOR_GITHUB
+  echo $name
+  echo "git@github-private:$(echo $name)/$1"
+  # if [ $name = $1 ]; then
+  #   echo "git@github.com-private/"
+  # else
+  #   echo "[ERROR] `pwd` is not your private workspace."
+  #   echo 'You should change directory.'
+  # fi
+}
+
 ### Unix
 ## code
 alias dots='code ~/dotfiles'
@@ -79,7 +92,6 @@ alias ..='cd ..'
 ### git
 alias g='git'
 alias gini='git init'
-alias gclo='git clone'
 # git add
 alias gadd='git add'
 alias gad='git add .'

@@ -16,3 +16,5 @@ eval "$(goenv init -)"
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOENV_ROOT/bin:$PATH
 
+
+export PATH="$HOME/.cargo/bin:$PATH"

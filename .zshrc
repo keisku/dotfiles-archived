@@ -89,29 +89,31 @@ alias moregiconf='more .git/config'
 alias cdbengal='cd go/1.13.1/src/github.com/hrbrain/bengal-api'
 alias ..='cd ..'
 
-### git
+### Git
 alias g='git'
 alias gini='git init'
+
 # git add
-alias gadd='git add'
 alias gad='git add .'
-# git commit
+
+# git commit (c)
 alias gc='git commit -m'
 alias gadc='git add . && git commit -m'
 alias game='git commit --amend -m' # コミットメッセージを修正
-#git push
-alias gpsh='git push origin HEAD'
+
+#git push (psh)
+alias gPs='git push origin HEAD'
 alias gpsh-f='git push --force-with-lease origin HEAD'
 alias gpsh-d='git push --delete origin' # ブランチ名の指定が必要
-# git rebase
-alias grebase='git pull --rebase origin master'
-alias grebase-c='git rebase --continue'
-#git checkout
-alias gch='git checkout'
-alias gch-b='git checkout -b'
-# git branch / git status
-alias gbmemo='git branch --edit-description' # ブランチにメモを残せる
-alias gbshow='git config branch.$(git rev-parse --abbrev-ref ${1:-@}).description'
+
+# git rebase (R)
+alias gR='git pull --rebase origin master'
+alias gR-c='git rebase --continue'
+
+#git checkout (C)
+alias gC='git checkout'
+alias gC-b='git checkout -b'
+
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
 alias gbm='git branch -m'
@@ -139,8 +141,8 @@ alias gsta='git stash'
 alias gsls='git stash list'
 alias gspop='git stash pop'
 alias gsapp='(){git stash apply stash@\{$1\}}'
-alias gsdr='(){git stash drop stash@\{$1\}}'
-alias gssv='git stash save' 
+alias gsdr='(){git stash drop stash@\{$1\} && git stash list}'
+alias gssv='(){git stash save \"$1\" && git stash list}' 
 # git clean
 alias gclean='git reset HEAD . && git clean -df .'
 

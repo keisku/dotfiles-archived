@@ -93,26 +93,45 @@ alias ..='cd ..'
 alias g='git'
 alias gini='git init'
 
-# git add
-alias gad='git add .'
+# git add (a)
+alias ga='git add .'
+alias gac='git add . && git commit -m'
 
 # git commit (c)
 alias gc='git commit -m'
-alias gadc='git add . && git commit -m'
-alias game='git commit --amend -m' # コミットメッセージを修正
+alias gcam='git commit --amend -m'
 
-#git push (psh)
-alias gPs='git push origin HEAD'
-alias gpsh-f='git push --force-with-lease origin HEAD'
-alias gpsh-d='git push --delete origin' # ブランチ名の指定が必要
+# git push (P)
+alias gP='git push origin HEAD'
+alias gPf='git push --force-with-lease origin HEAD'
+alias gPd='git push --delete origin'
 
 # git rebase (R)
 alias gR='git pull --rebase origin master'
-alias gR-c='git rebase --continue'
+alias gRc='git rebase --continue'
 
-#git checkout (C)
+# git checkout (C)
 alias gC='git checkout'
-alias gC-b='git checkout -b'
+alias gCb='git checkout -b'
+
+# git stash (S)
+alias gS='(){git stash save \"$1\" && git stash list}' 
+alias gSl='git stash list'
+alias gSpo='git stash pop'
+alias gSa='(){git stash apply stash@\{$1\}}'
+alias gSd='(){git stash drop stash@\{$1\} && git stash list}'
+
+# git log (L)
+alias gL='git log --oneline'
+
+# git diff (Df)
+alias gDf='git diff --histogram'
+
+# git config (cf)
+alias gcf='git config'
+alias gcfg='git config --global'
+alias gcfl='git config --local'
+alias gcfll='git config --local -l'
 
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する
@@ -120,31 +139,6 @@ alias gbm='git branch -m'
 alias gb-d='git branch -D'
 alias gs='git status'
 alias gb='git branch -a && git status'
-# git log
-alias glog='git log'
-alias gl='git log --oneline'
-# git diff
-alias gdiff='git diff --histogram' # HEAD~ - 1つ前のコミットと比べる
-# git remote
-alias gremote='git remote -v'
-alias gseturl='git remote set-url origin'
-# git config
-alias gconf='git config'
-alias gglobal='git config --global --list'
-alias glocal='git config --local --list'
-# マージしたけどやめたいとき
-alias gabort='git merge --abort' # マージしたらコンフリクトしたのでやめる
-alias greset='git reset --hard HEAD' # コンフリクトを解消したけどやめる
-alias greset='git reset'
-# git stash
-alias gsta='git stash'
-alias gsls='git stash list'
-alias gspop='git stash pop'
-alias gsapp='(){git stash apply stash@\{$1\}}'
-alias gsdr='(){git stash drop stash@\{$1\} && git stash list}'
-alias gssv='(){git stash save \"$1\" && git stash list}' 
-# git clean
-alias gclean='git reset HEAD . && git clean -df .'
 
 ### docker
 alias dkps='docker ps'

@@ -14,7 +14,10 @@ fhc(){
 
 # fh - repeat history
 fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  local cmd
+  cmd=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+  echo "run: $cmd\n"
+  eval $cmd
 }
 
 # fch - checkout git branch (including remote branches)

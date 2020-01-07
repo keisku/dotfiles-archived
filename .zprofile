@@ -12,6 +12,7 @@ PROMPT='%F{cyan}%B[%T]%b%f %~ %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%
 # export PATH="$HOME/.cargo/bin:$PATH"
 
 # path for go
+export GOENV_DISABLE_GOPATH=1 # go env 解除
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GOROOT=$HOME/go

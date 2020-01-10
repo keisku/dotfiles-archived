@@ -41,19 +41,6 @@ fshow() {
 FZF-EOF"
 }
 
-# git clone
-gclone() {
-  name=$MY_NAME_FOR_GITHUB
-  echo $name
-  echo "git@github-private:$(echo $name)/$1"
-  # if [ $name = $1 ]; then
-  #   echo "git@github.com-private/"
-  # else
-  #   echo "[ERROR] `pwd` is not your private workspace."
-  #   echo 'You should change directory.'
-  # fi
-}
-
 ### Unix
 ## code
 alias dots='code ~/dotfiles'
@@ -96,6 +83,28 @@ alias ..='cd ..'
 alias g='git'
 alias gini='git init'
 
+# git clone(Cl)
+gCl() {
+  local repo name email prefix repo
+  repo=$1
+  name=$2
+  email=$3
+  repo=${repo#*:}
+  cmd="git clone "
+  prefix="git@github-private:"
+  eval $cmd$prefix$repo
+  repo=${repo%.*}
+  repo=${repo#*/}
+  eval "cd $repo"
+  eval "git config --local user.name $name"
+  eval "git config --local user.email $email"
+}
+
+# git config (cf)
+alias gcfg='git config --global'
+alias gcfl='git config --local'
+alias gcfll='git config --local -l'
+
 # git add (a)
 alias ga='git add .'
 alias gac='git add . && git commit -m'
@@ -130,11 +139,6 @@ alias gL='git log --oneline'
 # git diff (Df)
 alias gDf='git diff --histogram'
 
-# git config (cf)
-alias gcf='git config'
-alias gcfg='git config --global'
-alias gcfl='git config --local'
-alias gcfll='git config --local -l'
 
 # git branch -m "newname" - カレントブランチのブランチ名を修正する
 # git branch -m "old" "new" - ブランチのブランチ名を修正する

@@ -17,6 +17,7 @@ fh() {
   local cmd
   cmd=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
   echo "run: $cmd\n"
+  echo $cmd | pbcopy
   eval $cmd
 }
 
@@ -114,22 +115,29 @@ alias gc='git commit -m'
 alias gcam='git commit --amend -m'
 
 # git push (P)
-alias gP='git push origin HEAD'
-alias gPf='git push --force-with-lease origin HEAD'
+alias gP='git push origin'
+alias gPf='git push --force-with-lease origin'
 alias gPd='git push --delete origin'
 
 # git rebase (R)
 alias gR='git pull --rebase origin master'
-alias gRc='git rebase --continue'
+alias gRc='git add .; git rebase --continue'
+
+# git pull(pl)
+alias gpl='git pull origin'
+
+# git fetch(F)
+alias gF='git fetch --all'
+alias gFp='git fetch -p'
 
 # git checkout (C)
 alias gC='git checkout'
-alias gCb='git checkout -b'
+alias gCh='git checkout HEAD .'
 
 # git stash (S)
 alias gS='(){git stash save \"$1\" && git stash list}' 
 alias gSl='git stash list'
-alias gSpo='git stash pop'
+alias gSp='git stash pop'
 alias gSa='(){git stash apply stash@\{$1\}}'
 alias gSd='(){git stash drop stash@\{$1\} && git stash list}'
 
@@ -139,16 +147,25 @@ alias gL='git log --oneline'
 # git diff (Df)
 alias gDf='git diff --histogram'
 
-
-# git branch -m "newname" - カレントブランチのブランチ名を修正する
-# git branch -m "old" "new" - ブランチのブランチ名を修正する
+# git branch (b, B)
 alias gbm='git branch -m'
-alias gb-d='git branch -D'
 alias gs='git status'
 alias gb='git branch -a && git status'
+alias gB='git checkout -b'
+alias gbd='git branch -D'
 
-### docker
-alias dkps='docker ps'
+# git reset(R)
+alias gRh='git reset --hard HEAD^'
+alias gRs='git reset --soft HEAD^'
+
+# git cherry-pick(CP)
+alias gCP='git cherry-pick'
+
+# docker ps(p)
+alias dkp='docker ps'
+alias dkpa='docker ps -a'
+# docker stop(s)
+alias dks='docker stop'
 
 # Gitbブランチを表示させる
 # https://qiita.com/nishina555/items/f4f1ddc6ed7b0b296825

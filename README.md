@@ -1,3 +1,10 @@
+# Installation NeoBundle
+
+run 
+```
+curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+```
+
 # shellファイルには権限を付ける
 
 ```

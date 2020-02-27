@@ -1,4 +1,22 @@
-"setting
+set nocompatible
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+"insert here your Neobundle plugins"
+NeoBundle 'scrooloose/nerdtree'
+
+NeoBundleCheck
+call neobundle#end()
+
+filetype plugin indent on
+
+" NERDTree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
 "文字コードをUFT-8に設定
 set fenc=utf-8
 "バックアップファイルを作らない

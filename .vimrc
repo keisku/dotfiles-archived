@@ -1,17 +1,16 @@
 set nocompatible
 filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kannokanno/previm'
+Plugin 'tyru/open-browser.vim'
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-"insert here your Neobundle plugins"
-NeoBundle 'scrooloose/nerdtree'
-
-NeoBundleCheck
-call neobundle#end()
-
+call vundle#end()
 filetype plugin indent on
 
 " NERDTree

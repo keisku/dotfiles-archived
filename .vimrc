@@ -16,6 +16,8 @@ filetype plugin indent on
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+"クリップボード有効化
+set clipboard=unnamed,autoselect
 "文字コードをUFT-8に設定
 set fenc=utf-8
 "バックアップファイルを作らない

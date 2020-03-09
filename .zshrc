@@ -1,5 +1,5 @@
 # laod files under .zsh.d 
-ZSHHOME="${HOME}/dotfiles/.zsh.d"
+ZSHHOME="${HOME}/dotfiles/.zsh"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
      -x $ZSHHOME ]; then

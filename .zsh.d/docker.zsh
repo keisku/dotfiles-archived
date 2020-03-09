@@ -5,6 +5,11 @@ alias dk='docker'
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
 
+# docker rm
+alias dkrm='docker rm'
+alias dkrm-all='docker rm `docker ps -a -q`'
+alias dkrmi-all='docker rmi $(docker images | awk "/^<none>/ { print $3 }")'
+
 # docker stop(s)
 alias dks='docker stop'
 # docker volume
@@ -15,7 +20,7 @@ alias dkrmv-nolink='docker volume ls -qf dangling=true | xargs docker volume rm'
 # images
 alias dki='docker images'
 alias dki-notag='docker images --filter "dangling=true"'
-# rm images - not tagged
+# rm images - no tagged
 alias dkrmi-notag='docker images -qf dangling=true | xargs docker rmi'
 
 # docker system df - show ammount to use

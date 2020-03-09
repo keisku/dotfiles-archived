@@ -1,0 +1,21 @@
+{
+  "languageserver": {
+  "golang": {
+    "command": "gopls",
+    "rootPatterns": ["go.mod"],
+    "disableWorkspaceFolders": true,
+    "filetypes": ["go"]
+  },
+  "dockerfile": {
+    "command": "dockerfile-languageserver",
+    "filetypes": ["dockerfile"],
+    "args": ["--stdio"],
+  },
+  "terraform": {
+    "command": "terraform-lsp",
+    "filetypes": ["terraform"],
+    "initializationOptions": {}
+  }
+ },
+ "coc.preferences.formatOnSaveFiletypes": ["go"]
+}

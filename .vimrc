@@ -9,12 +9,16 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+"
+" 隠しファイルを検索
+let g:ctrlp_show_hidden = 1
 
 "クリップボード有効化
 set clipboard=unnamed,autoselect

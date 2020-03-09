@@ -7,7 +7,7 @@ alias dkpa='docker ps -a'
 
 # docker rm
 alias dkrm='docker rm'
-alias dkrm-all='docker rm `docker ps -a -q`'
+alias dkrm-all='docker rm "docker ps -a -q"'
 alias dkrmi-all='docker rmi $(docker images | awk "/^<none>/ { print $3 }")'
 
 # docker stop(s)

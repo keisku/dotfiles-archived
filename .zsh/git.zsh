@@ -39,7 +39,7 @@ alias gPf='git push --force-with-lease origin'
 alias gPd='git push --delete origin'
 
 # git rebase (R)
-alias gR='git pull --rebase origin master'
+alias gR='git pull --rebase origin'
 alias gRc='git add .; git rebase --continue'
 
 # git pull(pl)

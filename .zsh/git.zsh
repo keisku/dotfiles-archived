@@ -33,26 +33,27 @@ alias gac='git add . && git commit -m'
 alias gc='git commit -m'
 alias gcam='git commit --amend -m'
 
-# git push (P)
-alias gP='git push origin'
-alias gPf='git push --force-with-lease origin'
-alias gPd='git push --delete origin'
-
-# git rebase (R)
-alias gR='git pull --rebase origin'
-alias gRc='git add .; git rebase --continue'
+# git push (psh)
+alias gpsh='git push origin'
+alias gpshf='git push --force-with-lease origin'
+alias gpshd='git push --delete origin'
 
 # git pull(pl)
 alias gpl='git pull origin'
+alias gplr='git pull --rebase origin'
+
+# git rebase(rb)
+alias grb='git rebase -i'
+alias grbc='git add .; git rebase --continue'
+alias grbab='git rebase --abort'
 
 # git fetch(F)
 alias gF='git fetch --all'
 alias gFp='git fetch -p'
 
 # git checkout (C)
-alias gC='git checkout'
 alias gCh='git checkout HEAD .'
-alias gChB='git checkout -b'
+alias gChb='git checkout -b'
 
 # git stash (S)
 alias gS='(){git stash save \"$1\" && git stash list}' 
@@ -60,7 +61,6 @@ alias gSl='git stash list'
 alias gSp='git stash pop'
 alias gSa='(){git stash apply stash@\{$1\}}'
 alias gSd='(){git stash drop stash@\{$1\} && git stash list}'
-
 # git stash; git stash drop stash@{0}
 alias gSdrop='git add .;git stash; git stash drop stash@{0}'
 
@@ -77,10 +77,11 @@ alias gb='git branch -a && git status'
 alias gbd='git branch -D'
 alias gbd-merged='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
 
-# git reset(R)
-alias gRh='git reset --hard HEAD^'
-alias gRs='git reset --soft HEAD^'
+# git reset(rs)
+alias grs-h='git reset --hard HEAD^'
+alias grs-s='git reset --soft HEAD^'
+alias grs-master='git reset --hard origin/master'
 
-# git cherry-pick(CP)
-alias gCP='git cherry-pick'
+# git cherry-pick(pick)
+alias gpick='git cherry-pick'
 

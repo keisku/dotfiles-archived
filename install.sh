@@ -3,14 +3,26 @@
 # add submodule
 git submodule update --init --recursive
 
-# symlink dotfiles
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.zprofile ~/.zprofile
-ln -sf ~/dotfiles/.vim ~/.vim
-ln -sf ~/dotfiles/.tigrc ~/.tigrc
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+echo "install homebrew"
 
-# change shell
+# brew install
+brew install git
+brew install zsh
 chsh -s $(which zsh)
+
+brew install tig
+brew insall go
+brew install nodebrew
+brew install tmux
+
+echo "install git, zsh, tig, go, nodebrew, tmux"
+
+# install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "install vim-plug"
 
 source ~/dotfiles/.zshrc

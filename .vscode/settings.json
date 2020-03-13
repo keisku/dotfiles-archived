@@ -1,0 +1,18 @@
+{
+    //====================
+    // general settings
+    //====================
+    "files.insertFinalNewline": true,
+    "editor.renderControlCharacters": true,
+    "files.trimFinalNewlines": true,
+    "workbench.colorTheme": "Nord", // editor theme
+    // golang
+    "go.alternateTools": {
+        "go-langserver": "bingo"
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true
+    },
+    "go.useLanguageServer": true
+}

@@ -27,3 +27,15 @@ alias catbrc='cat ~/.bashrc'
 
 # cd
 alias ..='cd ..'
+setopt auto_cd
+setopt auto_pushd
+
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+setopt prompt_subst
+
+# プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
+RPROMPT='`rprompt-git-current-branch`'
+export PATH="/usr/local/sbin:$PATH"
+
+# 前のコマンドと同じ場合履歴に残さない
+setopt HIST_IGNORE_DUPS

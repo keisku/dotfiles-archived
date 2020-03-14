@@ -16,6 +16,8 @@ brew install tig
 brew insall go
 brew install nodebrew
 brew install tmux
+brew install pyenv
+brew install tfenv
 
 echo "install git, zsh, tig, go, nodebrew, tmux"
 

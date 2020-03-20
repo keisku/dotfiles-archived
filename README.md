@@ -1,11 +1,3 @@
-# Installation vim-plug
-
-run 
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
 # shellファイルには権限を付ける
 
 ```

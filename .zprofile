@@ -16,3 +16,5 @@ eval "$(pyenv init -)"
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH 
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"

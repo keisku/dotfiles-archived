@@ -9,8 +9,13 @@
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
     "editor.dragAndDrop": false,
+    "editor.formatOnSave": true,
+    "editor.tabCompletion": "on",
+    "editor.snippetSuggestions": "top",
     "workbench.colorTheme": "Nord", // editor theme
     "workbench.startupEditor": "none",
+    "workbench.list.keyboardNavigation": "simple",
+    "vim.whichwrap": "h,l,<,>,[,]",
     "vim.useSystemClipboard": true,
     "bookmarks.treeview.visible": true,
     "debug.inlineValues": true,
@@ -36,7 +41,6 @@
         "autoComplete": true
     },
     "[go]": {
-        "editor.snippetSuggestions": "none",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
@@ -65,5 +69,27 @@
     "[typescriptreact]": {
         "editor.tabSize": 2,
     },
-    "eslint.autoFixOnSave": true,
+    //====================
+    // rust
+    //====================
+    "rust-client.useWSL": true,
+    "rust-client.revealOutputChannelOn": "info",
+    "rust-client.rustupPath": "~/.cargo/bin/rustup",
+    //====================
+    // terraform
+    //====================
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    },
+    "explorer.confirmDragAndDrop": false,
 }

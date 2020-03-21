@@ -26,7 +26,22 @@
     },
     {
         "key": "ctrl+`",
-        "command": "workbench.action.terminal.focus",
+        "command": "workbench.action.focusPanel",
         "when": "editorFocus"
-    }
+    },
+    {
+        "key": "ctrl+s",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+]",
+        "command": "workbench.action.nextPanelView",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "workbench.action.previousPanelView",
+        "when": "panelFocus"
+    },
 ]

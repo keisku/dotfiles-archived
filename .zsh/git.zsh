@@ -82,6 +82,10 @@ alias grs-h='git reset --hard HEAD^'
 alias grs-s='git reset --soft HEAD^'
 alias grs-master='git reset --hard origin/master'
 
+# git revert(rv)
+alias grv='git revert'
+alias grv-n='(){git revert $1 --no-commit}'
+
 # git cherry-pick(pick)
 alias gpick='git cherry-pick'
 

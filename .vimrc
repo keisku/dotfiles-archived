@@ -21,6 +21,7 @@ filetype plugin indent on
 
 " NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap  <CR> i<CR><ESC>
 
 " 隠しファイルを検索
 let g:ctrlp_show_hidden = 1

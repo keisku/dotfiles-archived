@@ -33,6 +33,7 @@
     //====================
     "vim.highlightedyank.enable": true,
     "vim.whichwrap": "h,l,<,>,[,]",
+    "vim.hlsearch": true,
     "vim.useSystemClipboard": true,
     "vim.easymotion": true,
     "vim.normalModeKeyBindingsNonRecursive": [

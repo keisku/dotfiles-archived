@@ -1,4 +1,7 @@
 [
+    //======================================================
+    // editor
+    //======================================================
     {
         "key": "ctrl+j",
         "command": "workbench.action.quickOpenSelectNext",
@@ -34,6 +37,9 @@
         "command": "editor.action.insertSnippet",
         "when": "editorTextFocus"
     },
+    //======================================================
+    // panel
+    //======================================================
     {
         "key": "shift+cmd+]",
         "command": "workbench.action.nextPanelView",
@@ -43,5 +49,48 @@
         "key": "shift+cmd+[",
         "command": "workbench.action.previousPanelView",
         "when": "panelFocus"
+    },
+    //======================================================
+    // find
+    //======================================================
+    {
+        "key": "ctrl+j",
+        "command": "goToNextReferenceFromEmbeddedEditor",
+        "when": "inReferenceSearchEditor"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "goToPreviousReferenceFromEmbeddedEditor",
+        "when": "inReferenceSearchEditor"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "search.action.focusNextSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "goToNextReference",
+        "when": "referenceSearchVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "goToPreviousReference",
+        "when": "referenceSearchVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "references-view.next",
+        "when": "reference-list.hasResult"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "references-view.prev",
+        "when": "reference-list.hasResult"
     },
 ]

@@ -37,6 +37,17 @@
         "command": "editor.action.insertSnippet",
         "when": "editorTextFocus"
     },
+    {
+        "key": "cmd+k cmd+l",
+        "command": "editor.action.showDefinitionPreviewHover"
+    },
+    //======================================================
+    // file
+    //======================================================
+    {
+        "key": "cmd+o r",
+        "command": "workbench.action.openRecent"
+    },
     //======================================================
     // panel
     //======================================================
@@ -54,43 +65,50 @@
     // find
     //======================================================
     {
-        "key": "ctrl+j",
+        "key": "ctrl+n",
         "command": "goToNextReferenceFromEmbeddedEditor",
         "when": "inReferenceSearchEditor"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+p",
         "command": "goToPreviousReferenceFromEmbeddedEditor",
         "when": "inReferenceSearchEditor"
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+n",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+p",
         "command": "search.action.focusPreviousSearchResult",
         "when": "hasSearchResult"
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+n",
         "command": "goToNextReference",
         "when": "referenceSearchVisible"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+p",
         "command": "goToPreviousReference",
         "when": "referenceSearchVisible"
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+n",
         "command": "references-view.next",
         "when": "reference-list.hasResult"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+p",
         "command": "references-view.prev",
         "when": "reference-list.hasResult"
+    },
+    //======================================================
+    // bookmark
+    //======================================================
+    {
+        "key": "alt+cmd+b",
+        "command": "bookmarks.listFromAllFiles"
     },
 ]

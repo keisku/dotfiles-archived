@@ -79,7 +79,18 @@
     },
     "go.languageServerExperimentalFeatures": {
         "format": true,
-        "autoComplete": true
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
     },
     "[go]": {
         "editor.formatOnSave": true,
@@ -115,7 +126,7 @@
     //====================
     "rust-client.useWSL": true,
     "rust-client.revealOutputChannelOn": "info",
-    "rust-client.rustupPath": "i$HOME/.cargo/bin/rustup",
+    "rust-client.rustupPath": "$HOME/.cargo/bin/rustup",
     //====================
     // terraform
     //====================

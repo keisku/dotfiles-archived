@@ -41,6 +41,11 @@
         "key": "cmd+k cmd+l",
         "command": "editor.action.showDefinitionPreviewHover"
     },
+    {
+        "key": "ctrl+g ctrl+i",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
     //======================================================
     // file
     //======================================================

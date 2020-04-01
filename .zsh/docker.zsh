@@ -10,6 +10,11 @@ alias dkrm='docker rm'
 alias dkrm-all='docker rm "docker ps -a -q"'
 alias dkrmi-all='docker rmi $(docker images | awk "/^<none>/ { print $3 }")'
 
+# docker inspect(i)
+alias dki='docker inspect'
+alias dki-env='docker inspect --format="{{range .Config.Env}}{{println .}}{{end}}"'
+alias dki-ip='docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
+
 # docker stop(s)
 alias dks='docker stop'
 # docker volume
@@ -17,11 +22,11 @@ alias dkv='docker volume ls'
 # volume - not linked to any container
 alias dkrmv-nolink='docker volume ls -qf dangling=true | xargs docker volume rm'
 
-# images
-alias dki='docker images'
-alias dki-notag='docker images --filter "dangling=true"'
+# images(im)
+alias dkim='docker images'
+alias dkim-notag='docker images --filter "dangling=true"'
 # rm images - no tagged
-alias dkrmi-notag='docker images -qf dangling=true | xargs docker rmi'
+alias dkrmim-notag='docker images -qf dangling=true | xargs docker rmi'
 
 # docker system df - show ammount to use
 alias dksysdf='docker system df'

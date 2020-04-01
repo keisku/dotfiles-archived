@@ -20,6 +20,7 @@ gCl() {
 }
 
 # git config (cf)
+alias gcf='git config -e'
 alias gcfg='git config --global'
 alias gcfl='git config --local'
 alias gcfll='git config --local -l'
@@ -56,7 +57,7 @@ alias gCh='git checkout HEAD .'
 alias gChb='git checkout -b'
 
 # git stash (S)
-alias gS='(){git stash save \"$1\" && git stash list}' 
+alias gS='(){git stash save \"$1\" && git stash list}'
 alias gSl='git stash list'
 alias gSp='git stash pop'
 alias gSa='(){git stash apply stash@\{$1\}}'

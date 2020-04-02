@@ -46,6 +46,23 @@
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
+    // ctrl + e でサイドバーにフォーカス
+    {
+        "key": "ctrl+e",
+        "command": "-cursorLineEnd",
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-extension.vim_ctrl+e",
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "shift+cmd+e",
+        "command": "-workbench.view.explorer"
+    },
     //======================================================
     // file
     //======================================================

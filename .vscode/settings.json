@@ -32,7 +32,9 @@
     // typo check
     //====================
     "cSpell.userWords": [
-        "xerrors"
+        "hrbrain",
+        "xerrors",
+        "xorm"
     ],
     //====================
     // vim

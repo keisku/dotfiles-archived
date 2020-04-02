@@ -1,4 +1,4 @@
-# laod files under .zsh.d 
+# laod files under .zsh.d
 ZSHHOME="${HOME}/dotfiles/.zsh"
 
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
@@ -8,6 +8,9 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
             [ \( -f $i -o -h $i \) -a -r $i ] && . $i
     done
 fi
+
+# starship コマンドプロンプトをおしゃれにするやつ
+eval "$(starship init zsh)"
 
 source ~/.zprofile
 # fzf インストール時に更新したやつ

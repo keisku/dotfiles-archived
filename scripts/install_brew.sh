@@ -11,6 +11,7 @@ echo "install homebrew"
 brew install git
 brew install zsh
 chsh -s $(which zsh)
+brew install starship
 
 brew install tig
 brew insall go

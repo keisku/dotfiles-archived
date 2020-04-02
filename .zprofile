@@ -1,7 +1,8 @@
 autoload -U compinit
 compinit
 
-PROMPT='%F{cyan}%B[%T]%b%f %~ %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%f '
+# starship を導入したためコメントアウト
+# PROMPT='%F{cyan}%B[%T]%b%f %~ %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%f '
 
 # go
 export GOENV_DISABLE_GOPATH=1 # go env 解除
@@ -14,7 +15,7 @@ export PATH="PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH 
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"

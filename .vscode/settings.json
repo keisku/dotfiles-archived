@@ -29,6 +29,12 @@
         "**/.svn": true,
     },
     //====================
+    // typo check
+    //====================
+    "cSpell.userWords": [
+        "xerrors"
+    ],
+    //====================
     // vim
     //====================
     "vim.highlightedyank.enable": true,

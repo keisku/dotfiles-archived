@@ -87,42 +87,42 @@
     // find
     //======================================================
     {
-        "key": "ctrl+n",
+        "key": "ctrl+j",
         "command": "goToNextReferenceFromEmbeddedEditor",
         "when": "inReferenceSearchEditor"
     },
     {
-        "key": "ctrl+p",
+        "key": "ctrl+k",
         "command": "goToPreviousReferenceFromEmbeddedEditor",
         "when": "inReferenceSearchEditor"
     },
     {
-        "key": "ctrl+n",
+        "key": "ctrl+j",
         "command": "search.action.focusNextSearchResult",
         "when": "hasSearchResult"
     },
     {
-        "key": "ctrl+p",
+        "key": "ctrl+k",
         "command": "search.action.focusPreviousSearchResult",
         "when": "hasSearchResult"
     },
     {
-        "key": "ctrl+n",
+        "key": "ctrl+j",
         "command": "goToNextReference",
         "when": "referenceSearchVisible"
     },
     {
-        "key": "ctrl+p",
+        "key": "ctrl+k",
         "command": "goToPreviousReference",
         "when": "referenceSearchVisible"
     },
     {
-        "key": "ctrl+n",
+        "key": "ctrl+j",
         "command": "references-view.next",
         "when": "reference-list.hasResult"
     },
     {
-        "key": "ctrl+p",
+        "key": "ctrl+k",
         "command": "references-view.prev",
         "when": "reference-list.hasResult"
     },

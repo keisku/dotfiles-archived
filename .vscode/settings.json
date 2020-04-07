@@ -5,6 +5,7 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
+    "files.autoSave": "afterDelay",
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
@@ -33,6 +34,8 @@
     //====================
     "cSpell.userWords": [
         "hrbrain",
+        "postgres",
+        "uuid",
         "xerrors",
         "xorm"
     ],
@@ -132,9 +135,10 @@
     //====================
     // rust
     //====================
-    "rust-client.useWSL": true,
     "rust-client.revealOutputChannelOn": "info",
     "rust-client.rustupPath": "$HOME/.cargo/bin/rustup",
+    "rust-client.channel": "stable",
+    "rust.mode": "rls",
     //====================
     // terraform
     //====================

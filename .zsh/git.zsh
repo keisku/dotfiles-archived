@@ -36,9 +36,16 @@ alias grbab='git rebase --abort'
 alias gf='git fetch --all'
 alias gfp='git fetch -p'
 
-# git checkout (ch)
-alias gch='git checkout HEAD .'
-alias gchb='git checkout -b'
+# git checkout (co)
+alias gco-h='git checkout HEAD .'
+alias gcob='git checkout -b'
+gco() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
 
 # git stash (s)
 alias gs='(){git stash save \"$1\" && git stash list}'
@@ -65,7 +72,7 @@ FZF-EOF"
 # git diff (df)
 alias gdf='git diff --histogram'
 
-# git branch (b, B)
+# git branch (b)
 alias gbm='git branch -m'
 alias gb='git branch -a && git status'
 alias gbd='git branch -D'

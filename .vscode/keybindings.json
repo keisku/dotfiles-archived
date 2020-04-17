@@ -2,16 +2,7 @@
     //======================================================
     // editor
     //======================================================
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.quickOpenSelectNext",
-        "when": "inQuickOpen"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.quickOpenSelectPrevious",
-        "when": "inQuickOpen"
-    },
+    // サジェストリスト
     {
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
@@ -22,25 +13,18 @@
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
-    {
-        "key": "ctrl+`",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "workbench.action.focusPanel",
-        "when": "editorFocus"
-    },
+    // snipet
     {
         "key": "ctrl+s",
         "command": "editor.action.insertSnippet",
         "when": "editorTextFocus"
     },
+    // preview
     {
         "key": "cmd+k cmd+l",
         "command": "editor.action.showDefinitionPreviewHover"
     },
+    // go to implemention
     {
         "key": "ctrl+g ctrl+i",
         "command": "editor.action.goToImplementation",
@@ -49,11 +33,11 @@
     // ctrl + e でサイドバーにフォーカス
     {
         "key": "ctrl+e",
-        "command": "-cursorLineEnd",
+        "command": "-cursorLineEnd"
     },
     {
         "key": "ctrl+e",
-        "command": "-extension.vim_ctrl+e",
+        "command": "-extension.vim_ctrl+e"
     },
     {
         "key": "ctrl+e",
@@ -62,6 +46,19 @@
     {
         "key": "shift+cmd+e",
         "command": "-workbench.view.explorer"
+    },
+    //======================================================
+    // command palette
+    //======================================================
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
     },
     //======================================================
     // file

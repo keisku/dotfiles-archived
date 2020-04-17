@@ -155,4 +155,5 @@
         "enabled": true,
         "args": []
     },
+    "typescript.updateImportsOnFileMove.enabled": "always",
 }

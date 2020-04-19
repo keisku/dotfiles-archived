@@ -14,10 +14,12 @@
     "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "top",
     "editor.lineNumbers": "relative",
-    "workbench.colorTheme": "Nord", // editor theme
+    "bookmarks.treeview.visible": true,
+    // workbench
+    "workbench.colorTheme": "Ariake Dark", // editor theme
     "workbench.startupEditor": "none",
     "workbench.list.keyboardNavigation": "simple",
-    "bookmarks.treeview.visible": true,
+    // explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "debug.inlineValues": true,
@@ -35,6 +37,7 @@
     "cSpell.userWords": [
         "hrbrain",
         "postgres",
+        "rebuilder",
         "uuid",
         "xerrors",
         "xorm"
@@ -156,4 +159,6 @@
         "args": []
     },
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": 0,
+    "javascript.updateImportsOnFileMove.enabled": "always",
 }

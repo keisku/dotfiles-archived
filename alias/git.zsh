@@ -28,7 +28,7 @@ alias gpl='git pull origin'
 alias gplr='git pull --rebase origin'
 
 # git rebase(rb)
-alias grb='git rebase -i'
+alias grb='(){git rebase -i HEAD~$1}'
 alias grbc='git add .; git rebase --continue'
 alias grbab='git rebase --abort'
 

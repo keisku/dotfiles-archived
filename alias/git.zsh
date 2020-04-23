@@ -48,7 +48,7 @@ gco() {
 }
 
 # git stash (s)
-alias gs='(){git stash save \"$1\" && git stash list}'
+alias gs='(){git add .;git stash save \"$1\" && git stash list}'
 alias gsl='git stash list'
 alias gsp='git stash pop'
 alias gsa='(){git stash apply stash@\{$1\}}'

@@ -2,10 +2,12 @@
     //====================
     // general settings
     //====================
+    // files
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
+    // editor
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "boundary",
     "editor.minimap.enabled": false,
@@ -22,6 +24,7 @@
     // explorer
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+    // debug
     "debug.inlineValues": true,
     // ファイルブラウザには表示するが、検索から除外する
     "search.exclude": {
@@ -60,7 +63,48 @@
                 "Enter",
                 "<Esc>"
             ]
-        }
+        },
+        // インデントした際にビジュアルモードを保持する
+        {
+            "before": [
+                ">"
+            ],
+            "after": [
+                ">",
+                "g",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "after": [
+                "<",
+                "g",
+                "v"
+            ]
+        },
+        // ノーマルモードのときにsキーで削除した文字をヤンクしない
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "\"",
+                "_",
+                "s"
+            ]
+        },
+        // ハイライトを消す
+        {
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
     ],
     //====================
     // markdown

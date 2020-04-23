@@ -2,7 +2,7 @@
     //======================================================
     // editor
     //======================================================
-    // サジェストリスト
+    // suggest list
     {
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
@@ -30,7 +30,24 @@
         "command": "editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
     },
-    // ctrl + e でサイドバーにフォーカス
+    // indent
+    {
+        "key": "tab",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
+    },
+    {
+        "key": "shift+tab",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly && vim.active && vim.mode != 'Insert'"
+    },
+    //======================================================
+    // Explorer
+    //======================================================
+    {
+        "key": "ctrl+w e",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
     {
         "key": "ctrl+e",
         "command": "-cursorLineEnd"
@@ -96,12 +113,12 @@
     {
         "key": "ctrl+j",
         "command": "search.action.focusNextSearchResult",
-        "when": "hasSearchResult"
+        "when": "hasSearchResult && !inQuickOpen && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+k",
         "command": "search.action.focusPreviousSearchResult",
-        "when": "hasSearchResult"
+        "when": "hasSearchResult && !inQuickOpen && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+j",

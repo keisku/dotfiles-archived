@@ -205,4 +205,6 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "window.zoomLevel": 0,
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "plantuml.render": "PlantUMLServer",
+    "plantuml.server": "http://localhost:7070/",
 }

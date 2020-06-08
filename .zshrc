@@ -9,9 +9,10 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
     done
 fi
 
-# starship コマンドプロンプトをおしゃれにするやつ
 eval "$(starship init zsh)"
 
 source ~/.zprofile
-# fzf インストール時に更新したやつ
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -9,6 +9,7 @@ anyenv update
 
 anyenv install nodenv
 anyenv install pyenv
+anyenv install tfenv
 
 exec $SHELL -l
 

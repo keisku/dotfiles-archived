@@ -16,9 +16,7 @@
     "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "top",
     "editor.lineNumbers": "relative",
-    "bookmarks.treeview.visible": true,
-    // workbench
-    "workbench.colorTheme": "Ariake Dark", // editor theme
+    "bookmarks.treeview.visible": true, // editor theme
     "workbench.startupEditor": "none",
     "workbench.list.keyboardNavigation": "simple",
     // explorer
@@ -207,4 +205,5 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://localhost:7070/",
+    "workbench.colorTheme": "Moonlight Italic",
 }

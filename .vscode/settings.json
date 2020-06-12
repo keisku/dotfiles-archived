@@ -1,209 +1,184 @@
 {
-    //====================
-    // general settings
-    //====================
-    // files
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "files.autoSave": "afterDelay",
-    // editor
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "boundary",
-    "editor.minimap.enabled": false,
-    "editor.dragAndDrop": false,
+  //====================
+  // general settings
+  //====================
+  // files
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "afterDelay",
+  // editor
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": false,
+  "editor.dragAndDrop": false,
+  "editor.formatOnSave": true,
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.lineNumbers": "relative",
+  "bookmarks.treeview.visible": true, // editor theme
+  "workbench.colorTheme": "Moonlight II Italic",
+  "workbench.startupEditor": "none",
+  "workbench.list.keyboardNavigation": "simple",
+  // explorer
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // debug
+  "debug.inlineValues": true,
+  // ファイルブラウザには表示するが、検索から除外する
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp/cache": true,
+    "tags": true,
+    "**/.svn": true
+  },
+  //====================
+  // typo check
+  //====================
+  "cSpell.userWords": [
+    "hrbrain",
+    "postgres",
+    "rebuilder",
+    "uuid",
+    "xerrors",
+    "xorm"
+  ],
+  //====================
+  // vim
+  //====================
+  "vim.highlightedyank.enable": true,
+  "vim.whichwrap": "h,l,<,>,[,]",
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["Enter"],
+      "after": ["i", "Enter", "<Esc>"]
+    },
+    // インデントした際にビジュアルモードを保持する
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    },
+    // ノーマルモードのときにsキーで削除した文字をヤンクしない
+    {
+      "before": ["s"],
+      "after": ["\"", "_", "s"]
+    },
+    // ハイライトを消す
+    {
+      "before": ["<Esc>"],
+      "commands": [":nohl"]
+    }
+  ],
+  //====================
+  // markdown
+  //====================
+  "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+  "markdown-preview-enhanced.enableScriptExecution": true,
+  "markdown-preview-enhanced.singlePreview": false,
+  "markdown-preview-enhanced.previewTheme": "github-light.css",
+  "markdown.preview.breaks": true,
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.orderedList.autoRenumber": false,
+  "markdown.extension.syntax.decorations": false,
+  "markdown.extension.tableFormatter.enabled": false,
+  //====================
+  // git
+  //====================
+  "git.autofetch": true,
+  //====================
+  // markdown
+  //====================
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "files.trimTrailingWhitespace": false
+  },
+  //====================
+  // golang
+  //====================
+  "go.alternateTools": {
+    "go-langserver": "gopls"
+  },
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true,
+    "rename": true,
+    "goToDefinition": true,
+    "hover": true,
+    "signatureHelp": true,
+    "goToTypeDefinition": true,
+    "goToImplementation": true,
+    "documentSymbols": true,
+    "workspaceSymbols": true,
+    "findReferences": true,
+    "diagnostics": true,
+    "documentLink": true
+  },
+  "[go]": {
     "editor.formatOnSave": true,
-    "editor.tabCompletion": "on",
-    "editor.snippetSuggestions": "top",
-    "editor.lineNumbers": "relative",
-    "bookmarks.treeview.visible": true, // editor theme
-    "workbench.startupEditor": "none",
-    "workbench.list.keyboardNavigation": "simple",
-    // explorer
-    "explorer.confirmDragAndDrop": false,
-    "explorer.confirmDelete": false,
-    // debug
-    "debug.inlineValues": true,
-    // ファイルブラウザには表示するが、検索から除外する
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/tmp/cache": true,
-        "tags": true,
-        "**/.svn": true,
-    },
-    //====================
-    // typo check
-    //====================
-    "cSpell.userWords": [
-        "hrbrain",
-        "postgres",
-        "rebuilder",
-        "uuid",
-        "xerrors",
-        "xorm"
-    ],
-    //====================
-    // vim
-    //====================
-    "vim.highlightedyank.enable": true,
-    "vim.whichwrap": "h,l,<,>,[,]",
-    "vim.hlsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.easymotion": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "Enter",
-            ],
-            "after": [
-                "i",
-                "Enter",
-                "<Esc>"
-            ]
-        },
-        // インデントした際にビジュアルモードを保持する
-        {
-            "before": [
-                ">"
-            ],
-            "after": [
-                ">",
-                "g",
-                "v"
-            ]
-        },
-        {
-            "before": [
-                "<"
-            ],
-            "after": [
-                "<",
-                "g",
-                "v"
-            ]
-        },
-        // ノーマルモードのときにsキーで削除した文字をヤンクしない
-        {
-            "before": [
-                "s"
-            ],
-            "after": [
-                "\"",
-                "_",
-                "s"
-            ]
-        },
-        // ハイライトを消す
-        {
-            "before": [
-                "<Esc>"
-            ],
-            "commands": [
-                ":nohl"
-            ]
-        },
-    ],
-    //====================
-    // markdown
-    //====================
-    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
-    "markdown-preview-enhanced.enableScriptExecution": true,
-    "markdown-preview-enhanced.singlePreview": false,
-    "markdown-preview-enhanced.previewTheme": "github-light.css",
-    "markdown.preview.breaks": true,
-    "markdown.extension.orderedList.marker": "one",
-    "markdown.extension.orderedList.autoRenumber": false,
-    "markdown.extension.syntax.decorations": false,
-    "markdown.extension.tableFormatter.enabled": false,
-    //====================
-    // git
-    //====================
-    "git.autofetch": true,
-    //====================
-    // markdown
-    //====================
-    "[markdown]": {
-        "editor.wordWrap": "off",
-        "files.trimTrailingWhitespace": false,
-    },
-    //====================
-    // golang
-    //====================
-    "go.alternateTools": {
-        "go-langserver": "gopls"
-    },
-    "go.languageServerExperimentalFeatures": {
-        "format": true,
-        "autoComplete": true,
-        "rename": true,
-        "goToDefinition": true,
-        "hover": true,
-        "signatureHelp": true,
-        "goToTypeDefinition": true,
-        "goToImplementation": true,
-        "documentSymbols": true,
-        "workspaceSymbols": true,
-        "findReferences": true,
-        "diagnostics": true,
-        "documentLink": true
-    },
-    "[go]": {
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        },
-    },
-    "gopls": {
-        "usePlaceholders": true,
-        "enhancedHover": true
-    },
-    "go.useLanguageServer": true,
-    //====================
-    // javascript
-    //====================
-    "[javascript]": {
-        "editor.tabSize": 2,
-    },
-    "[javascriptreact]": {
-        "editor.tabSize": 2,
-    },
-    "[json]": {
-        "editor.tabSize": 2,
-    },
-    "[typescript]": {
-        "editor.tabSize": 2,
-    },
-    "[typescriptreact]": {
-        "editor.tabSize": 2,
-    },
-    //====================
-    // rust
-    //====================
-    "rust-client.revealOutputChannelOn": "info",
-    "rust-client.rustupPath": "$HOME/.cargo/bin/rustup",
-    "rust-client.channel": "stable",
-    "rust.mode": "rls",
-    //====================
-    // terraform
-    //====================
-    "terraform.indexing": {
-        "enabled": false,
-        "liveIndexing": false,
-        "delay": 500,
-        "exclude": [
-            ".terraform/**/*",
-            "**/.terraform/**/*"
-        ]
-    },
-    "terraform.languageServer": {
-        "enabled": true,
-        "args": []
-    },
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "window.zoomLevel": 0,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "plantuml.render": "PlantUMLServer",
-    "plantuml.server": "http://localhost:7070/",
-    "workbench.colorTheme": "Moonlight Italic",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "gopls": {
+    "usePlaceholders": true,
+    "enhancedHover": true
+  },
+  "go.useLanguageServer": true,
+  //====================
+  // javascript
+  //====================
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
+  //====================
+  // rust
+  //====================
+  "rust-client.revealOutputChannelOn": "info",
+  "rust-client.rustupPath": "$HOME/.cargo/bin/rustup",
+  "rust-client.channel": "stable",
+  "rust.mode": "rls",
+  //====================
+  // terraform
+  //====================
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [".terraform/**/*", "**/.terraform/**/*"]
+  },
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  //====================
+  // java script
+  //====================
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 0,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  //====================
+  // plant uml
+  //====================
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "http://localhost:7070/"
 }

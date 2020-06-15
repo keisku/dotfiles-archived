@@ -180,5 +180,5 @@
   // plant uml
   //====================
   "plantuml.render": "PlantUMLServer",
-  "plantuml.server": "http://localhost:7070/"
+  "plantuml.server": "http://localhost:8080/"
 }

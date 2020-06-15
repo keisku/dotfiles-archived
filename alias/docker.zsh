@@ -17,6 +17,7 @@ alias dki-ip='docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPA
 
 # docker stop(s)
 alias dks='docker stop'
+alias dks-all='docker stop $(docker ps -q)'
 # docker volume
 alias dkv='docker volume ls'
 # volume - not linked to any container
@@ -36,9 +37,17 @@ alias dkc='docker-compose'
 # docker-compose ps(dkcp)
 alias dkcp='docker-compose ps'
 # docker-compose up(dkcup)
+alias dkcup='docker-compose up -d'
 alias dkcup-re='docker-compose up --force-recreate -d  --remove-orphans'
+# docker-compose down(dkcdown)
+alias dkcdown='docker-compose down --remove-orphans'
+# docker-compose restart(dkcrestart)
+alias dkcdown='docker-compose restart'
 # docker-compose buld(dkcb)
-alias dkcb='docker-compose build --no-cache'
+alias dkcb='docker-compose build'
+alias dkcb-nocache='docker-compose build --no-cache'
+# docker-compose logs(dkclogs)
+alias dkclogs='docker-compose logs -ft'
 
 # docker network (dkn)
 alias dknls='docker network ls'

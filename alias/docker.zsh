@@ -5,6 +5,13 @@ alias dk='docker'
 alias dkp='docker ps'
 alias dkpa='docker ps -a'
 
+# docker build(dkb)
+alias dkb='docker build ./'
+alias dkb-t='docker build ./ -t'
+
+# docker run(dkrun)
+alias dkrun='docker run -d -p'
+
 # docker rm
 alias dkrm='docker rm'
 alias dkrm-all='docker rm "docker ps -a -q"'
@@ -42,7 +49,7 @@ alias dkcup-re='docker-compose up --force-recreate -d  --remove-orphans'
 # docker-compose down(dkcdown)
 alias dkcdown='docker-compose down --remove-orphans'
 # docker-compose restart(dkcrestart)
-alias dkcdown='docker-compose restart'
+alias dkcrestart='docker-compose restart'
 # docker-compose buld(dkcb)
 alias dkcb='docker-compose build'
 alias dkcb-nocache='docker-compose build --no-cache'

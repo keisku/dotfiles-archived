@@ -27,6 +27,11 @@ alias gpshd='git push --delete origin'
 alias gpl='git pull origin'
 alias gplr='git pull --rebase origin'
 
+# git merge(m)
+alias gm="git merge"
+alias gmc="git merge --continue"
+alias gmab="git merge --abort"
+
 # git rebase(rb)
 alias grb='(){git rebase -i HEAD~$1}'
 alias grbc='git add .; git rebase --continue'
@@ -97,6 +102,8 @@ alias grs-master='git reset --hard origin/master'
 # git revert(rv)
 alias grv='git revert'
 alias grv-n='(){git revert $1 --no-commit}'
+alias grvc='git revert --continue'
+alias grvab='git revert --abort'
 
 # git cherry-pick(pk)
 alias gpk='git cherry-pick'

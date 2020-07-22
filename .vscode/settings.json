@@ -1,6 +1,6 @@
 {
   //====================
-  // general settings
+  // vs code settings
   //====================
   // files
   "files.insertFinalNewline": true,
@@ -16,9 +16,7 @@
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
   "editor.lineNumbers": "relative",
-  "bookmarks.treeview.visible": true, // editor theme
-  "workbench.colorTheme": "Moonlight II Italic",
-  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Moonlight Italic",
   "workbench.list.keyboardNavigation": "simple",
   // explorer
   "explorer.confirmDragAndDrop": false,
@@ -54,27 +52,79 @@
   "vim.easymotion": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["Enter"],
-      "after": ["i", "Enter", "<Esc>"]
+      "before": [
+        "Enter"
+      ],
+      "after": [
+        "i",
+        "Enter",
+        "<Esc>"
+      ]
     },
     // インデントした際にビジュアルモードを保持する
     {
-      "before": [">"],
-      "after": [">", "g", "v"]
+      "before": [
+        ">"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ]
     },
     {
-      "before": ["<"],
-      "after": ["<", "g", "v"]
+      "before": [
+        "<"
+      ],
+      "after": [
+        "<",
+        "g",
+        "v"
+      ]
     },
-    // ノーマルモードのときにsキーで削除した文字をヤンクしない
+    // disable highlights
     {
-      "before": ["s"],
-      "after": ["\"", "_", "s"]
+      "before": [
+        "<Esc>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    }
+  ],
+  //====================
+  // Better Comments
+  //====================
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
     },
-    // ハイライトを消す
     {
-      "before": ["<Esc>"],
-      "commands": [":nohl"]
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "backgroundColor": "transparent"
     }
   ],
   //====================
@@ -127,10 +177,6 @@
       "source.organizeImports": true
     }
   },
-  "gopls": {
-    "usePlaceholders": true,
-    "enhancedHover": true
-  },
   "go.useLanguageServer": true,
   //====================
   // javascript
@@ -154,21 +200,16 @@
   // rust
   //====================
   "rust-client.revealOutputChannelOn": "info",
-  "rust-client.rustupPath": "$HOME/.cargo/bin/rustup",
   "rust-client.channel": "stable",
   "rust.mode": "rls",
   //====================
   // terraform
   //====================
-  "terraform.indexing": {
-    "enabled": false,
-    "liveIndexing": false,
-    "delay": 500,
-    "exclude": [".terraform/**/*", "**/.terraform/**/*"]
-  },
   "terraform.languageServer": {
-    "enabled": true,
-    "args": []
+    "external": true,
+    "args": [
+      "serve"
+    ]
   },
   //====================
   // java script
@@ -180,5 +221,17 @@
   // plant uml
   //====================
   "plantuml.render": "PlantUMLServer",
-  "plantuml.server": "http://localhost:8080/"
+  "plantuml.server": "http://localhost:8080/",
+  "cSpell.enableFiletypes": [
+    "!typescriptreact",
+    "terraform"
+  ],
+  //====================
+  // kubernetes
+  //====================
+  "vs-kubernetes": {
+    "vs-kubernetes.minikube-path.mac": "~/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+    "vs-kubernetes.helm-path.mac": "~/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.draft-path.mac": "~/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  }
 }

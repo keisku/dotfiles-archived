@@ -28,9 +28,15 @@ alias gpl='git pull origin'
 alias gplr='git pull --rebase origin'
 
 # git merge(m)
-alias gm="git merge"
-alias gmc="git merge --continue"
-alias gmab="git merge --abort"
+alias gmrgc="git merge --continue"
+alias gmrgab="git merge --abort"
+gmrg() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##") --no-ff
+}
 
 # git rebase(rb)
 alias grb='(){git rebase -i HEAD~$1}'
@@ -44,6 +50,7 @@ alias gfp='git fetch -p'
 # git checkout (co)
 alias gco-h='git checkout HEAD .'
 alias gcob='git checkout -b'
+alias gcom='git checkout master;git pull --rebase origin master'
 gco() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&

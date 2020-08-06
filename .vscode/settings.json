@@ -15,7 +15,6 @@
   "editor.formatOnSave": true,
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
-  "editor.lineNumbers": "relative",
   "workbench.colorTheme": "Moonlight Italic",
   "workbench.list.keyboardNavigation": "simple",
   // explorer
@@ -153,31 +152,15 @@
   //====================
   // golang
   //====================
-  "go.alternateTools": {
-    "go-langserver": "gopls"
-  },
-  "go.languageServerExperimentalFeatures": {
-    "format": true,
-    "autoComplete": true,
-    "rename": true,
-    "goToDefinition": true,
-    "hover": true,
-    "signatureHelp": true,
-    "goToTypeDefinition": true,
-    "goToImplementation": true,
-    "documentSymbols": true,
-    "workspaceSymbols": true,
-    "findReferences": true,
-    "diagnostics": true,
-    "documentLink": true
-  },
+  "go.useLanguageServer": true,
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
-    }
+      "source.organizeImports": true,
+    },
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    "editor.snippetSuggestions": "none",
   },
-  "go.useLanguageServer": true,
   //====================
   // javascript
   //====================

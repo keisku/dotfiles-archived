@@ -21,22 +21,15 @@ alias gcam='git commit --amend -m'
 # git push (psh)
 alias gpsh='git push origin'
 alias gpshf='git push --force-with-lease origin'
-alias gpshd='git push --delete origin'
 
 # git pull(pl)
 alias gpl='git pull origin'
 alias gplr='git pull --rebase origin'
+alias gplrm='git pull --rebase origin master'
 
 # git merge(m)
 alias gmrgc="git merge --continue"
 alias gmrgab="git merge --abort"
-gmrg() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##") --no-ff
-}
 
 # git rebase(rb)
 alias grb='(){git rebase -i HEAD~$1}'
@@ -51,13 +44,6 @@ alias gfp='git fetch -p'
 alias gco-h='git checkout HEAD .'
 alias gcob='git checkout -b'
 alias gcom='git checkout master;git pull --rebase origin master'
-gco() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
 
 # git stash (s)
 alias gs='(){git add .;git stash save \"$1\" && git stash list}'
@@ -70,16 +56,6 @@ alias gsdrop='git add .;git stash; git stash drop stash@{0}'
 
 # git log (l)
 alias gl='git log --oneline -n 15'
-glog() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind "ctrl-m:execute:
-                (grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-                {}
-FZF-EOF"
-}
 
 # git diff (df)
 alias gdf='git diff --histogram'
@@ -87,16 +63,7 @@ alias gdf='git diff --histogram'
 # git branch (b)
 alias gbm='git branch -m'
 alias gb='git branch -a && git status'
-alias gbd='git branch -D'
-gbdel() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git branch -D $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-alias gbdel-merged='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
-alias gbclean='(){git checkout master;git pull --rebase origin master;git checkout $1}'
+alias gbd-merged='git branch --merged|egrep -v "\*|develop|master"|xargs git branch -d'
 
 # git status (st)
 alias gst='git status'
@@ -118,3 +85,48 @@ alias gpkc='git cherry-pick --continue'
 alias gpkab='git cherry-pick --abort'
 alias gpkn='git cherry-pick -n'
 alias gpke='git cherry-pick -e'
+
+# git functions
+gsyncmaster() {
+  local currentBranch
+  currentBranch=$(git branch --show-current)
+  git checkout master
+  git pull --rebase origin master
+  git branch -D $currentBranch
+  git checkout -b $currentBranch
+}
+
+gbdel() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git branch -D $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+gco() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+glog() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+gmrg() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##") --no-ff
+}

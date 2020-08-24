@@ -15,7 +15,7 @@
   "editor.formatOnSave": true,
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
-  "workbench.colorTheme": "Moonlight Italic",
+  "workbench.colorTheme": "Dracula",
   "workbench.list.keyboardNavigation": "simple",
   // explorer
   "explorer.confirmDragAndDrop": false,
@@ -207,6 +207,7 @@
   "plantuml.server": "http://localhost:8080/",
   "cSpell.enableFiletypes": [
     "!typescriptreact",
+    "gohtml",
     "terraform"
   ],
   //====================

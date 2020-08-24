@@ -45,7 +45,7 @@ alias dkc='docker-compose'
 alias dkcp='docker-compose ps'
 # docker-compose up(dkcup)
 alias dkcup='docker-compose up -d'
-alias dkcup-re='docker-compose up --force-recreate -d  --remove-orphans'
+alias dkcup-re='docker-compose up --force-recreate -d --remove-orphans'
 # docker-compose down(dkcdown)
 alias dkcdown='docker-compose down --remove-orphans'
 # docker-compose restart(dkcrestart)

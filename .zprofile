@@ -1,7 +1,7 @@
 autoload -U compinit
 compinit
 
-# starship を導入したためコメントアウト
+# use starship instead of below
 # PROMPT='%F{cyan}%B[%T]%b%f %~ %F{cyan}%B›%b%f%F{cyan}%B›%b%f%F{cyan}%B›%b%f '
 
 # go
@@ -18,4 +18,5 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # anyenv
-eval "$(anyenv init -)"
+# eval "$(anyenv init -)"
+# -> `tfenv init` is not found

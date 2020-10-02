@@ -87,7 +87,17 @@ alias gpkn='git cherry-pick -n'
 alias gpke='git cherry-pick -e'
 
 # git functions
-gsyncmaster() {
+gsyncto() {
+  local targets target
+  branches=$(git branch --all | grep -v HEAD)
+  target=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m)
+  target=$(echo "$target" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  git branch -D $target
+  git checkout -b $target
+}
+
+gsyncfrommaster() {
   local currentBranch
   currentBranch=$(git branch --show-current)
   git checkout master

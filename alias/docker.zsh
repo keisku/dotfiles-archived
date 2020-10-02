@@ -1,63 +1,69 @@
-# docker(dk)
-alias dk='docker'
+# docker(d)
+alias d='docker'
 
-# docker ps(p)
-alias dkp='docker ps'
-alias dkpa='docker ps -a'
+# docker ps(ps)
+alias dps='docker ps'
+alias dpsa='docker ps -a'
 
-# docker build(dkb)
-alias dkb='docker build ./'
-alias dkb-t='docker build ./ -t'
+# docker build(dbd)
+alias dbd='docker build ./'
+alias dbd-t='docker build ./ -t'
 
-# docker run(dkrun)
-alias dkrun='docker run -d -p'
+# docker run(drun)
+alias drun='docker run -d -p'
 
 # docker rm
-alias dkrm='docker rm'
-alias dkrm-all='docker rm "docker ps -a -q"'
-alias dkrmi-all='docker rmi $(docker images | awk "/^<none>/ { print $3 }")'
+alias drm='docker rm'
+alias drm-all='docker rm "docker ps -a -q"'
+alias drmi-all='docker rmi $(docker images | awk "/^<none>/ { print $3 }")'
 
-# docker inspect(i)
-alias dki='docker inspect'
-alias dki-env='docker inspect --format="{{range .Config.Env}}{{println .}}{{end}}"'
-alias dki-ip='docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
+# docker inspect(ins)
+alias dins='docker inspect'
+alias dins-env='docker inspect --format="{{range .Config.Env}}{{println .}}{{end}}"'
+alias dins-ip='docker inspect --format="{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}"'
 
-# docker stop(s)
-alias dks='docker stop'
-alias dks-all='docker stop $(docker ps -q)'
-# docker volume
-alias dkv='docker volume ls'
+# docker stop(stop)
+alias dstop='docker stop'
+alias dstop-all='docker stop $(docker ps -q)'
+# docker volume(vl)
+alias dvlls='docker volume ls'
 # volume - not linked to any container
-alias dkrmv-nolink='docker volume ls -qf dangling=true | xargs docker volume rm'
+alias drmvl-nolink='docker volume ls -qf dangling=true | xargs docker volume rm'
 
 # images(im)
-alias dkim='docker images'
-alias dkim-notag='docker images --filter "dangling=true"'
+alias dim='docker images'
+alias dim-notag='docker images --filter "dangling=true"'
 # rm images - no tagged
-alias dkrmim-notag='docker images -qf dangling=true | xargs docker rmi'
+alias drmim-notag='docker images -qf dangling=true | xargs docker rmi'
 
 # docker system df - show ammount to use
-alias dksysdf='docker system df'
+alias dsysdf='docker system df'
 
 # docker-compose
-alias dkc='docker-compose'
-# docker-compose ps(dkcp)
-alias dkcp='docker-compose ps'
-# docker-compose up(dkcup)
-alias dkcup='docker-compose up -d'
-alias dkcup-re='docker-compose up --force-recreate -d --remove-orphans'
-# docker-compose down(dkcdown)
-alias dkcdown='docker-compose down --remove-orphans'
-# docker-compose restart(dkcrestart)
-alias dkcrestart='docker-compose restart'
-# docker-compose buld(dkcb)
-alias dkcb='docker-compose build'
-alias dkcb-nocache='docker-compose build --no-cache'
+alias dc='docker-compose'
+# docker-compose ps(dcp)
+alias dcps='docker-compose ps'
+# docker-compose up(dcup)
+alias dcup='docker-compose up -d'
+alias dcup-re='docker-compose up --force-recreate -d --remove-orphans'
+# docker-compose down(dcdown)
+alias dcdown='docker-compose down --remove-orphans'
+# docker-compose restart(dcrestart)
+alias dcrestart='docker-compose restart'
+# docker-compose buld(dcbd)
+alias dcbd='docker-compose build'
+alias dcbd-nocache='docker-compose build --no-cache'
 # docker-compose logs(dkclogs)
-alias dkclogs='docker-compose logs -ft'
+alias dclogs='docker-compose logs -ft'
 
-# docker network (dkn)
-alias dknls='docker network ls'
-alias dkni='docker network inspect'
-alias dknc='docker network connect'
-alias dkndc='docker network disconnect'
+# docker network (dnet)
+alias dnetls='docker network ls'
+alias dnetins='docker network inspect'
+alias dnetconn='docker network connect'
+alias dnetdisconn='docker network disconnect'
+
+dclean() {
+    docker rmi $(docker images | awk "/^<none>/ { print $3 }")
+    docker images -qf dangling=true | xargs docker rmi
+    docker volume ls -qf dangling=true | xargs docker volume rm
+}

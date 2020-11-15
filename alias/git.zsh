@@ -25,7 +25,6 @@ alias gpshf='git push --force-with-lease origin'
 # git pull(pl)
 alias gpl='git pull origin'
 alias gplr='git pull --rebase origin'
-alias gplrm='git pull --rebase origin master'
 
 # git merge(m)
 alias gmrgc="git merge --continue"
@@ -43,7 +42,7 @@ alias gfp='git fetch -p'
 # git checkout (co)
 alias gco-h='git checkout HEAD .'
 alias gcob='git checkout -b'
-alias gcom='git checkout master;git pull --rebase origin master'
+alias gcoprev='git checkout -'
 
 # git stash (s)
 alias gs='(){git add .;git stash save \"$1\" && git stash list}'
@@ -53,9 +52,6 @@ alias gsa='(){git stash apply stash@\{$1\}}'
 alias gsd='(){git stash drop stash@\{$1\} && git stash list}'
 alias gsclear='git stash clear'
 alias gsdrop='git add .;git stash; git stash drop stash@{0}'
-
-# git log (l)
-alias gl='git log --oneline -n 15'
 
 # git diff (df)
 alias gdf='git diff --histogram'
@@ -69,9 +65,8 @@ alias gbd-merged='git branch --merged|egrep -v "\*|develop|master"|xargs git bra
 alias gst='git status'
 
 # git reset(rs)
-alias grs-h='git reset --hard HEAD^'
-alias grs-s='git reset --soft HEAD^'
-alias grs-master='git reset --hard origin/master'
+alias grs-h='(){git reset --hard HEAD^$1}'
+alias grs-s='(){git reset --soft HEAD^$1}'
 
 # git revert(rv)
 alias grv='git revert'
@@ -97,11 +92,13 @@ gsyncto() {
   git checkout -b $target
 }
 
-gsyncfrommaster() {
+gsyncfromdefault() {
   local currentBranch
   currentBranch=$(git branch --show-current)
-  git checkout master
-  git pull --rebase origin master
+  local default
+  default=$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
+  git checkout $default
+  git pull --rebase origin $default
   git branch -D $currentBranch
   git checkout -b $currentBranch
 }
@@ -139,4 +136,17 @@ gmrg() {
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##") --no-ff
+}
+
+gplrdef() {
+  local default
+  default=$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
+  git pull --rebase origin $default
+}
+
+gcodef() {
+  local default
+  default=$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
+  git checkout $default
+  git pull --rebase origin $default
 }

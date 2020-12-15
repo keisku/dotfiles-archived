@@ -112,6 +112,7 @@ gbdel() {
 }
 
 gco() {
+  git fetch --all
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
@@ -136,6 +137,12 @@ gmrg() {
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##") --no-ff
+}
+
+gplrupstream() {
+  local default
+  default=$(git remote show origin | grep 'HEAD branch' | awk '{print $NF}')
+  git pull --rebase upstream $default
 }
 
 gplrdef() {

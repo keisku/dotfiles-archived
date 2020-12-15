@@ -188,6 +188,7 @@
   "cSpell.enableFiletypes": [
     "!typescriptreact",
     "gohtml",
+    "plaintext",
     "terraform"
   ],
   //====================

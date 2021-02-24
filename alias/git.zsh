@@ -8,7 +8,6 @@ alias gcfg='git config --global'
 alias gcfl='git config --local'
 alias gcfll='git config --local -l'
 alias gcfset='git config --local user.name "kskumgk63"; git config --local user.email "keisuke.umegaki.630@gmail.com"'
-alias gcfset-work='git config --local user.name "hrb-umegaki-keisuke"; git config --local user.email "umegaki.keisuke@hrbrain.co.jp"'
 
 # git add (a)
 alias ga='git add .'

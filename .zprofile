@@ -8,6 +8,9 @@ compinit
 export GOENV_DISABLE_GOPATH=1 # go env 解除
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GO11MMODULE=on
+export GOPROXY=direct
+export GOSUMDB=off
 
 # python
 export PYENV_ROOT="$HOME/.pyenv"

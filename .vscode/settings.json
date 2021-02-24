@@ -15,7 +15,7 @@
   "editor.formatOnSave": true,
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Nord",
   "workbench.list.keyboardNavigation": "simple",
   // explorer
   "explorer.confirmDragAndDrop": false,

@@ -19,12 +19,12 @@ alias gc='git commit -m'
 alias gcam='git commit --amend -m'
 
 # git push (psh)
-alias gpsh='git push origin'
-alias gpshf='git push --force-with-lease origin'
+alias gpsh='git push origin $(if [ -z $1 ]; then echo $(git branch --show-current); else echo $1; fi)'
+alias gpshf='git push --force-with-lease origin $(if [ -z $1 ]; then echo $(git branch --show-current); else echo $1; fi)'
 
 # git pull(pl)
-alias gpl='git pull origin'
-alias gplr='git pull --rebase origin'
+alias gpl='git pull origin $(if [ -z $1 ]; then echo $(git branch --show-current); else echo $1; fi)'
+alias gplr='git pull --rebase origin $(if [ -z $1 ]; then echo $(git branch --show-current); else echo $1; fi)'
 
 # git merge(m)
 alias gmrgc="git merge --continue"

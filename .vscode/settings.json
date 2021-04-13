@@ -198,5 +198,6 @@
     "vs-kubernetes.minikube-path.mac": "~/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
     "vs-kubernetes.helm-path.mac": "~/.vs-kubernetes/tools/helm/darwin-amd64/helm",
     "vs-kubernetes.draft-path.mac": "~/.vs-kubernetes/tools/draft/darwin-amd64/draft"
-  }
+  },
+  "go.toolsManagement.autoUpdate": true
 }
